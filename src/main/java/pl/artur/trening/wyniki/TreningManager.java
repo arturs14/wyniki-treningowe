@@ -24,13 +24,21 @@ public class TreningManager {
 	public void dodajTreningA(){
 		final Trening treningA = new Trening("treningA");
 		final Cwiczenie plaska = new Cwiczenie("plaska");
+                final Cwiczenie martwy = new Cwiczenie("martwy");
 		final SeriaTreningowa seriaNaPlaskiej = new SeriaTreningowa();
-
+                final SeriaTreningowa seriaNaMartwym = new SeriaTreningowa();
 		uzupelnijSerie(seriaNaPlaskiej);
-
+                uzupelnijSerie(seriaNaMartwym);
+                
+                
+                
+                
 		plaska.getSerie().add(seriaNaPlaskiej);
+                martwy.getSerie().add(seriaNaMartwym);
 		treningA.getListaCwiczen().add(plaska);
-		listaTreningów.add(treningA);
+		treningA.getListaCwiczen().add(martwy);
+		
+                listaTreningów.add(treningA);
 	}
 
 	public void dodajTreningB(){
@@ -38,12 +46,18 @@ public class TreningManager {
 	}
 
 	private void uzupelnijSerie(final SeriaTreningowa seria){
-		System.out.println("Wprowadz obciazenie: ");
+		System.out.println("Podaj nazwe cwiczenia");
+                final String nazwaCwiczenia = scanner.next();
+                System.out.println("Wprowadz obciazenie: ");
 		final int obciazenie = scanner.nextInt();
 		System.out.println("Wprowadz ilosc powtorzen");
 		final int iloscPowtorzen = scanner.nextInt();
-		seria.setPowtorzenia(iloscPowtorzen);
+                System.out.println("-----------------------");
+                seria.setNazwaCwiczenia(nazwaCwiczenia);
+                seria.setPowtorzenia(iloscPowtorzen);
 		seria.setObciazenie(obciazenie);
+                
+                
 	}
 
 }
