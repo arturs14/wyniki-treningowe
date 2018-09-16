@@ -20,11 +20,20 @@ public class TreningManager {
 	public void setListaTreningów(final List<Trening> listaTreningów) {
 		this.listaTreningów = listaTreningów;
 	}
+        
+        
+        public void dodajSerieDoCwiczenia(int iloscSerii, Cwiczenie cwiczenie){
+            
+        }
+                
 
 	public void dodajTreningA(){
 		final Trening treningA = new Trening("treningA");
 		final Cwiczenie plaska = new Cwiczenie("plaska");
-                final Cwiczenie martwy = new Cwiczenie("martwy");
+                
+                dodajSerieDoCwiczenia(5, plaska);
+		final Cwiczenie martwy = new Cwiczenie("martwy");
+                dodajSerieDoCwiczenia(5, martwy);
 		final SeriaTreningowa seriaNaPlaskiej = new SeriaTreningowa();
                 final SeriaTreningowa seriaNaMartwym = new SeriaTreningowa();
 		uzupelnijSerie(seriaNaPlaskiej);
