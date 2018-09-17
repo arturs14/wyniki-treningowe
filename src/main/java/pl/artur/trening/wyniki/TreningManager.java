@@ -29,28 +29,76 @@ public class TreningManager {
 
 	public void dodajTreningA(){
 		final Trening treningA = new Trening("treningA");
-		final Cwiczenie plaska = new Cwiczenie("plaska");
+		
+                final Cwiczenie plaska = new Cwiczenie("Plaska");
+                final Cwiczenie martwy = new Cwiczenie("Martwy");
+                final Cwiczenie dipy = new Cwiczenie("Dipy");
+                final Cwiczenie barkiBokiem = new Cwiczenie("Barki bokiem");
+                final Cwiczenie bicSztanga = new Cwiczenie("Bic sztanga");
                 
                 dodajSerieDoCwiczenia(5, plaska);
-		final Cwiczenie martwy = new Cwiczenie("martwy");
                 dodajSerieDoCwiczenia(5, martwy);
-		final SeriaTreningowa seriaNaPlaskiej = new SeriaTreningowa();
+		dodajSerieDoCwiczenia(4, dipy);
+		dodajSerieDoCwiczenia(4, barkiBokiem);
+		dodajSerieDoCwiczenia(4, bicSztanga);
+		
+                final SeriaTreningowa seriaNaPlaskiej = new SeriaTreningowa();
                 final SeriaTreningowa seriaNaMartwym = new SeriaTreningowa();
-		uzupelnijSerie(seriaNaPlaskiej);
+		final SeriaTreningowa seriaNaDipach = new SeriaTreningowa();
+		final SeriaTreningowa seriaNaBarkiBokiem = new SeriaTreningowa();
+		final SeriaTreningowa seriaNaBicSztanga = new SeriaTreningowa();
+		
+                uzupelnijSerie(seriaNaPlaskiej);
                 uzupelnijSerie(seriaNaMartwym);
-                
-                
+                uzupelnijSerie(seriaNaDipach);
+                uzupelnijSerie(seriaNaBarkiBokiem);
+                uzupelnijSerie(seriaNaBicSztanga);
                 
                 
 		plaska.getSerie().add(seriaNaPlaskiej);
                 martwy.getSerie().add(seriaNaMartwym);
-		treningA.getListaCwiczen().add(plaska);
+		dipy.getSerie().add(seriaNaMartwym);
+		barkiBokiem.getSerie().add(seriaNaMartwym);
+		bicSztanga.getSerie().add(seriaNaMartwym);
+		
+                treningA.getListaCwiczen().add(plaska);
 		treningA.getListaCwiczen().add(martwy);
+		treningA.getListaCwiczen().add(dipy);
+		treningA.getListaCwiczen().add(barkiBokiem);
+		treningA.getListaCwiczen().add(bicSztanga);
 		
                 listaTreningów.add(treningA);
 	}
 
 	public void dodajTreningB(){
+            final Trening treningB = new Trening("treningB");
+            
+            final Cwiczenie plaskaSila = new Cwiczenie("Plaska Sila");
+            final Cwiczenie drazek = new Cwiczenie("Drazek");
+            final Cwiczenie ohp = new Cwiczenie("OHP");
+            final Cwiczenie tricLinka = new Cwiczenie("Tric linka");
+            final Cwiczenie bicHantle = new Cwiczenie("Bic hantle");
+            
+            dodajSerieDoCwiczenia(5, plaskaSila);
+            dodajSerieDoCwiczenia(5, drazek);
+            dodajSerieDoCwiczenia(4, ohp);
+            dodajSerieDoCwiczenia(4, tricLinka);
+            dodajSerieDoCwiczenia(4, bicHantle);
+            
+            final SeriaTreningowa seriaNaPlaskiejSila = new SeriaTreningowa();
+            final SeriaTreningowa seriaNaDrazku = new SeriaTreningowa();
+            final SeriaTreningowa seriaNaOHP = new SeriaTreningowa();
+            final SeriaTreningowa seriaNaTricLinka = new SeriaTreningowa();
+            final SeriaTreningowa seriaNaBicHantle = new SeriaTreningowa();
+            
+            uzupelnijSerie(seriaNaPlaskiejSila);
+            uzupelnijSerie(seriaNaDrazku);
+            uzupelnijSerie(seriaNaOHP);
+            uzupelnijSerie(seriaNaTricLinka);
+            uzupelnijSerie(seriaNaBicHantle);
+            
+            
+            
 
 	}
 
