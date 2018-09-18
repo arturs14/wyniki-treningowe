@@ -57,9 +57,9 @@ public class TreningManager {
                 
 		plaska.getSerie().add(seriaNaPlaskiej);
                 martwy.getSerie().add(seriaNaMartwym);
-		dipy.getSerie().add(seriaNaMartwym);
-		barkiBokiem.getSerie().add(seriaNaMartwym);
-		bicSztanga.getSerie().add(seriaNaMartwym);
+		dipy.getSerie().add(seriaNaDipach);
+		barkiBokiem.getSerie().add(seriaNaBarkiBokiem);
+		bicSztanga.getSerie().add(seriaNaBicSztanga);
 		
                 treningA.getListaCwiczen().add(plaska);
 		treningA.getListaCwiczen().add(martwy);
@@ -97,7 +97,19 @@ public class TreningManager {
             uzupelnijSerie(seriaNaTricLinka);
             uzupelnijSerie(seriaNaBicHantle);
             
+            plaskaSila.getSerie().add(seriaNaPlaskiejSila);
+            drazek.getSerie().add(seriaNaDrazku);
+            ohp.getSerie().add(seriaNaOHP);
+            tricLinka.getSerie().add(seriaNaTricLinka);
+            bicHantle.getSerie().add(seriaNaBicHantle);
             
+            treningB.getListaCwiczen().add(plaskaSila);
+            treningB.getListaCwiczen().add(drazek);
+            treningB.getListaCwiczen().add(ohp);
+            treningB.getListaCwiczen().add(tricLinka);
+            treningB.getListaCwiczen().add(bicHantle);
+		
+            listaTreningów.add(treningB);
             
 
 	}
