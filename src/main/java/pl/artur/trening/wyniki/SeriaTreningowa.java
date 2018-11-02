@@ -3,15 +3,6 @@ package pl.artur.trening.wyniki;
 public class SeriaTreningowa {
 	private int powtorzenia;
 	private double obciazenie;
-        private String nazwaCwiczenia;
-
-    public void setNazwaCwiczenia(String nazwaCwiczenia) {
-        this.nazwaCwiczenia = nazwaCwiczenia;
-    }
-
-    public String getNazwaCwiczenia() {
-        return nazwaCwiczenia;
-    }
 
 	public SeriaTreningowa() {
 	}
