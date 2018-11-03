@@ -48,48 +48,32 @@ public class TreningManager {
 
 	}
 
-	//	public void dodajTreningB() {
-	//		final Trening treningB = new Trening("treningB");
-	//
-	//		final Cwiczenie plaskaSila = new Cwiczenie("Plaska Sila");
-	//		final Cwiczenie drazek = new Cwiczenie("Drazek");
-	//		final Cwiczenie ohp = new Cwiczenie("OHP");
-	//		final Cwiczenie tricLinka = new Cwiczenie("Tric linka");
-	//		final Cwiczenie bicHantle = new Cwiczenie("Bic hantle");
-	//
-	//		dodajSerieDoCwiczenia(5, plaskaSila);
-	//		dodajSerieDoCwiczenia(5, drazek);
-	//		dodajSerieDoCwiczenia(4, ohp);
-	//		dodajSerieDoCwiczenia(4, tricLinka);
-	//		dodajSerieDoCwiczenia(4, bicHantle);
-	//
-	//		final SeriaTreningowa seriaNaPlaskiejSila = new SeriaTreningowa();
-	//		final SeriaTreningowa seriaNaDrazku = new SeriaTreningowa();
-	//		final SeriaTreningowa seriaNaOHP = new SeriaTreningowa();
-	//		final SeriaTreningowa seriaNaTricLinka = new SeriaTreningowa();
-	//		final SeriaTreningowa seriaNaBicHantle = new SeriaTreningowa();
-	//
-	//		uzupelnijSerie(seriaNaPlaskiejSila);
-	//		uzupelnijSerie(seriaNaDrazku);
-	//		uzupelnijSerie(seriaNaOHP);
-	//		uzupelnijSerie(seriaNaTricLinka);
-	//		uzupelnijSerie(seriaNaBicHantle);
-	//
-	//		plaskaSila.getSerie().add(seriaNaPlaskiejSila);
-	//		drazek.getSerie().add(seriaNaDrazku);
-	//		ohp.getSerie().add(seriaNaOHP);
-	//		tricLinka.getSerie().add(seriaNaTricLinka);
-	//		bicHantle.getSerie().add(seriaNaBicHantle);
-	//
-	//		treningB.getListaCwiczen().add(plaskaSila);
-	//		treningB.getListaCwiczen().add(drazek);
-	//		treningB.getListaCwiczen().add(ohp);
-	//		treningB.getListaCwiczen().add(tricLinka);
-	//		treningB.getListaCwiczen().add(bicHantle);
-	//
-	//		listaTreningów.add(treningB);
-	//
-	//	}
+		public void dodajTreningB() {
+			final Trening treningB = new Trening("treningB");
+	
+			final Cwiczenie plaskaSila = new Cwiczenie("Plaska Sila");
+			final Cwiczenie drazek = new Cwiczenie("Drazek");
+			final Cwiczenie ohp = new Cwiczenie("OHP");
+			final Cwiczenie tricLinka = new Cwiczenie("Tric linka");
+			final Cwiczenie bicHantle = new Cwiczenie("Bic hantle");
+	
+			dodajSerieDoCwiczenia(5, plaskaSila);
+			dodajSerieDoCwiczenia(5, drazek);
+			dodajSerieDoCwiczenia(4, ohp);
+			dodajSerieDoCwiczenia(4, tricLinka);
+			dodajSerieDoCwiczenia(4, bicHantle);
+					
+			treningB.getListaCwiczen().add(plaskaSila);
+			treningB.getListaCwiczen().add(drazek);
+			treningB.getListaCwiczen().add(ohp);
+			treningB.getListaCwiczen().add(tricLinka);
+			treningB.getListaCwiczen().add(bicHantle);
+	
+			listaTreningów.add(treningB);
+                        
+                        wyswietlTrening(treningB);
+	
+		}
 
 	public void dodajSerieDoCwiczenia(final int iloscSerii, final Cwiczenie cwiczenie) {
 		for (int i = 0; i < iloscSerii; i++) {
@@ -116,7 +100,7 @@ public class TreningManager {
 		for (Cwiczenie cwiczenie : trening.getListaCwiczen()) {
 			System.out.println(cwiczenie.getNazwa());
 			for(SeriaTreningowa seria : cwiczenie.getSerie()){
-				System.out.println(seria.getPowtorzenia()+" "+seria.getObciazenie());
+				System.out.println(seria.getPowtorzenia()+" "+"*"+" "+seria.getObciazenie());
 			}
 
 		}
