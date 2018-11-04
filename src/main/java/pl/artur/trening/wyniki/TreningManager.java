@@ -21,7 +21,7 @@ public class TreningManager {
 		this.listaTreningów = listaTreningów;
 	}
 
-	public void dodajTreningA() {
+	public Trening dodajTreningA() {
 		final Trening treningA = new Trening("treningA");
 
 		final Cwiczenie plaska = new Cwiczenie("Plaska");
@@ -46,34 +46,38 @@ public class TreningManager {
 
 		wyswietlTrening(treningA);
 
+		return treningA;
+
 	}
 
-		public void dodajTreningB() {
-			final Trening treningB = new Trening("treningB");
-	
-			final Cwiczenie plaskaSila = new Cwiczenie("Plaska Sila");
-			final Cwiczenie drazek = new Cwiczenie("Drazek");
-			final Cwiczenie ohp = new Cwiczenie("OHP");
-			final Cwiczenie tricLinka = new Cwiczenie("Tric linka");
-			final Cwiczenie bicHantle = new Cwiczenie("Bic hantle");
-	
-			dodajSerieDoCwiczenia(5, plaskaSila);
-			dodajSerieDoCwiczenia(5, drazek);
-			dodajSerieDoCwiczenia(4, ohp);
-			dodajSerieDoCwiczenia(4, tricLinka);
-			dodajSerieDoCwiczenia(4, bicHantle);
-					
-			treningB.getListaCwiczen().add(plaskaSila);
-			treningB.getListaCwiczen().add(drazek);
-			treningB.getListaCwiczen().add(ohp);
-			treningB.getListaCwiczen().add(tricLinka);
-			treningB.getListaCwiczen().add(bicHantle);
-	
-			listaTreningów.add(treningB);
-                        
-                        wyswietlTrening(treningB);
-	
-		}
+	public Trening dodajTreningB() {
+		final Trening treningB = new Trening("treningB");
+
+		final Cwiczenie plaskaSila = new Cwiczenie("Plaska Sila");
+		final Cwiczenie drazek = new Cwiczenie("Drazek");
+		final Cwiczenie ohp = new Cwiczenie("OHP");
+		final Cwiczenie tricLinka = new Cwiczenie("Tric linka");
+		final Cwiczenie bicHantle = new Cwiczenie("Bic hantle");
+
+		dodajSerieDoCwiczenia(2, plaskaSila);
+		dodajSerieDoCwiczenia(1, drazek);
+		dodajSerieDoCwiczenia(1, ohp);
+		dodajSerieDoCwiczenia(1, tricLinka);
+		dodajSerieDoCwiczenia(1, bicHantle);
+
+		treningB.getListaCwiczen().add(plaskaSila);
+		treningB.getListaCwiczen().add(drazek);
+		treningB.getListaCwiczen().add(ohp);
+		treningB.getListaCwiczen().add(tricLinka);
+		treningB.getListaCwiczen().add(bicHantle);
+
+		listaTreningów.add(treningB);
+
+		wyswietlTrening(treningB);
+
+		return treningB;
+
+	}
 
 	public void dodajSerieDoCwiczenia(final int iloscSerii, final Cwiczenie cwiczenie) {
 		for (int i = 0; i < iloscSerii; i++) {
@@ -97,13 +101,34 @@ public class TreningManager {
 
 	private void wyswietlTrening(final Trening trening) {
 
-		for (Cwiczenie cwiczenie : trening.getListaCwiczen()) {
+		for (final Cwiczenie cwiczenie : trening.getListaCwiczen()) {
 			System.out.println(cwiczenie.getNazwa());
-			for(SeriaTreningowa seria : cwiczenie.getSerie()){
-				System.out.println(seria.getPowtorzenia()+" "+"*"+" "+seria.getObciazenie());
+			for (final SeriaTreningowa seria : cwiczenie.getSerie()) {
+				System.out.println(seria.getPowtorzenia() + " " + "*" + " " + seria.getObciazenie());
 			}
-
 		}
 	}
 
-}
+	public double obliczObjetoscTreningu(final Trening trening) {
+		double objetosc = 0;
+		for (final Cwiczenie cwiczenie : trening.getListaCwiczen()) {
+			for (final SeriaTreningowa seria : cwiczenie.getSerie()) {
+				objetosc = objetosc + seria.getObciazenie() * seria.getPowtorzenia();
+			}
+		}
+		return objetosc;
+	}
+
+	public double obliczObjetoscCwiczenie(final Trening trening) {
+		double objetoscCwiczenia = 0;
+		final String nazwaCwiczenia = scanner.next();
+		for (final Cwiczenie cwiczenie : trening.getListaCwiczen()) {
+			if (nazwaCwiczenia.equals(cwiczenie.getNazwa())) {
+				for (final SeriaTreningowa seria : cwiczenie.getSerie()) {
+					objetoscCwiczenia = objetoscCwiczenia + seria.getPowtorzenia() * seria.getObciazenie();
+				}
+			}
+		}
+			return objetoscCwiczenia;}
+
+	}
